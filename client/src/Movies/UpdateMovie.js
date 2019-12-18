@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const UpdateMovie = props => {
-  const [movie, setMovie] = useState({ id: props.match.params.props.id });
+  const [movie, setMovie] = useState({ id: props.match.params.id });
   const handleChange = e => {
     setMovie({
       ...movie,
@@ -34,7 +34,7 @@ const UpdateMovie = props => {
     <div className='movie-card'>
       <p>Fill out the form here to update a movie, if adding more then one star seperate each star with a comma followed by a space</p>
 
-      <form onSubmit={onSubmit}>
+      <form onSubmit={handleSubmit}>
         <input
           placeholder="Movie Name"
           name="title"
