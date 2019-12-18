@@ -26,6 +26,13 @@ const UpdateMovie = props => {
     });
   };
 
+  const handleStars = event => {
+    setMovie({
+      ...movie,
+      stars: [event.target.value]
+    })
+  }
+
   const handleSubmit = e => {
     e.preventDefault();
     axios
@@ -71,7 +78,7 @@ const UpdateMovie = props => {
           name='stars'
           placeholder='Stars'
           value={movie.stars}
-          onChange={handleChange} />
+          onChange={handleStars} />
           <br/>
         <button type="submit">Update</button>
       </form>
